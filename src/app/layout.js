@@ -1,15 +1,9 @@
 import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const avenir = localFont({
+  src: "./fonts/Avenir Next LT Pro.otf",
+  variable: "--font-avenir",
 });
 
 export const metadata = {
@@ -20,10 +14,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`${avenir.variable} antialiased bg-white`}>
+        <div className="flex items-center justify-center">
+          <div className="w-full sm:w-[375px]">{children}</div>
+        </div>
       </body>
     </html>
   );
