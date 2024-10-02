@@ -1,44 +1,18 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { RWebShare } from "react-web-share";
+import UseApi from "@/hooks/useApi";
 import Image from "next/image";
-import axios from "axios";
 
 export default function MainCard() {
-  const [data, setData] = useState();
-  const [metaData, setMetaData] = useState();
+  const { userData: data, loading } = UseApi(
+    "https://dev.elred.io/noSessionProfileDetails?userCode=66961e8dcc9a8155d09b8c9b"
+  );
+  const { userData: metaData, metaLoading } = UseApi(
+    "https://dev.elred.io/noSessionPreviewCardScreenshot?userCode=66961e8dcc9a8155d09b8c9b"
+  );
 
-  useEffect(() => {
-    fetchData();
-    fetchMetaData();
-  }, []);
-
-  const fetchData = async () => {
-    try {
-      const response = await axios.post(
-        "https://dev.elred.io/noSessionProfileDetails?userCode=66961e8dcc9a8155d09b8c9b"
-      );
-
-      setData(response.data.result[0]);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  const fetchMetaData = async () => {
-    try {
-      const response = await axios.post(
-        "https://dev.elred.io/noSessionPreviewCardScreenshot?userCode=66961e8dcc9a8155d09b8c9b"
-      );
-
-      setMetaData(response.data.result[0]);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  if (!data && !metaData) {
+  if (loading && metaLoading && !data && !metaData) {
     return (
       <div className="absolute top-0 right-0 bottom-0 left-0 flex items-center justify-center">
         <p className="text-2xl font-black">Loading .....</p>
