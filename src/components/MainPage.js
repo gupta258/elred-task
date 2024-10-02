@@ -59,12 +59,12 @@ export default function MainPage() {
         }}
         className="text-white pb-7"
       >
-        <div className="px-5 py-[10px] bg-white bg-opacity-20">
+        <div className="px-5 py-[10px] bg-white bg-opacity-20 fixed w-full sm:w-[375px]">
           <p className="font-medium text-base leading-6 -tracking-[1.9%]">
             Profile
           </p>
         </div>
-        <div className="px-5 mt-[67px] flex flex-col items-start">
+        <div className="px-5 pt-28 flex flex-col items-start">
           <Image
             src={data?.dpURL}
             width={60}
@@ -108,7 +108,7 @@ export default function MainPage() {
             </div>
           </div>
           <div
-            className="border-[1.5px] border-[#C5C5C5] rounded-lg overflow-hidden cursor-pointer"
+            className="border-[1.5px] border-[#C5C5C5] rounded-sm overflow-hidden cursor-pointer"
             onClick={() => setModal(true)}
           >
             <div
@@ -192,7 +192,10 @@ export default function MainPage() {
             <p className="text-xs font-medium leading-[14px]">Share</p>
           </div>
         </RWebShare>
-        <div className="mt-4 bg-white bg-opacity-20 mx-4 p-4 rounded-xl custom-shadow">
+        <div className="relative mt-10 bg-white bg-opacity-20 mx-4 p-4 rounded-xl custom-shadow">
+          <div className="absolute -top-[164px] right-0 bottom-0 left-0 flex items-center justify-center">
+            <Image src={"./star.svg"} width={46} height={46} alt="star" />
+          </div>
           <h6 className="font-medium text-lg leading-[22px] mb-4">Ratings</h6>
           <div className="px-2">
             <div className="flex items-start gap-8">
@@ -201,6 +204,7 @@ export default function MainPage() {
                 Has ethical code of conduct and is safe to do bussines with
               </p>
             </div>
+            <hr className="mt-2 mb-7 bg-white bg-opacity-30" />
             <div className="flex items-start gap-8">
               <p className="text-xl font-medium leading-6">27</p>
               <p className="text-xs font-medium leading-[18px]">
