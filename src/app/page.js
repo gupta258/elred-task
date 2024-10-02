@@ -20,8 +20,8 @@ export async function generateMetadata() {
         images: [
           {
             url: data.cardImageURL,
-            width: 800,
-            height: 600,
+            width: 300,
+            height: 300,
             alt: data.profileTitle,
           },
         ],
