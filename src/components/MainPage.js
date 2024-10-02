@@ -52,7 +52,7 @@ export default function MainPage() {
     <>
       <div
         style={{
-          backgroundImage: `url('${data.profileDesignInfo.profileBannerImageURL}')`,
+          backgroundImage: `url('${data?.profileDesignInfo?.profileBannerImageURL}')`,
           backgroundSize: "100% 100%",
           backgroundPosition: "cover",
           height: "100%",
@@ -75,7 +75,7 @@ export default function MainPage() {
           <div className="flex flex-col items-start mb-20">
             <div className="flex items-center gap-[5px]">
               <h6 className="text-2xl font-medium leading-7">
-                {data.firstname} {data.lastname}
+                {data?.firstname} {data?.lastname}
               </h6>
               <Image
                 src={"./ic_round-verified.svg"}
@@ -122,7 +122,7 @@ export default function MainPage() {
               <div className="flex flex-col items-center justify-center">
                 <div className="border-2 border-white rounded-full relative mb-[3px]">
                   <Image
-                    src={data.dpURL}
+                    src={data?.dpURL}
                     width={16}
                     height={16}
                     alt="profile-pic"
@@ -138,10 +138,10 @@ export default function MainPage() {
                 </div>
                 <div className="flex flex-col items-center justify-center mb-[3px]">
                   <h4 className="font-bold text-[5px] tracking-[3%]">
-                    {data.firstname}
+                    {data?.firstname}
                   </h4>
                   <h6 className="font-semibold text-[3px] tracking-[3%]">
-                    {data.lastname}
+                    {data?.lastname}
                   </h6>
                 </div>
                 <div className="flex flex-col items-center justify-center mb-[5px] font-bold text-[3px] capitalize">
@@ -176,9 +176,9 @@ export default function MainPage() {
 
         <RWebShare
           data={{
-            text: metaData.description,
+            text: metaData?.description,
             url: "https://elred-task.vercel.app/",
-            title: metaData.profileTitle,
+            title: metaData?.profileTitle,
           }}
         >
           <div className="bg-white bg-opacity-20 mx-4 py-4 rounded-xl custom-shadow mt-[26px] flex flex-col items-center justify-center cursor-pointer">
@@ -335,9 +335,9 @@ export default function MainPage() {
             <div className="absolute top-4 right-5 mb-6">
               <RWebShare
                 data={{
-                  text: metaData.description,
+                  text: metaData?.description,
                   url: "https://elred-task.vercel.app/",
-                  title: metaData.cardTitle,
+                  title: metaData?.cardTitle,
                 }}
                 onClick={() => console.log("shared successfully!")}
               >
@@ -355,7 +355,7 @@ export default function MainPage() {
             <div className="flex flex-col items-center justify-center">
               <div className="border-4 border-[#147BFF] rounded-full relative mb-6">
                 <Image
-                  src={data.dpURL}
+                  src={data?.dpURL}
                   width={116}
                   height={116}
                   alt="profile-pic"
@@ -371,10 +371,10 @@ export default function MainPage() {
               </div>
               <div className="flex flex-col items-center justify-center mb-[30px] gap-[2px]">
                 <h4 className="font-bold text-[30px] leading-[35px] tracking-[3%]">
-                  {data.firstname}
+                  {data?.firstname}
                 </h4>
                 <h6 className="font-semibold text-lg leading-[21px] tracking-[3%]">
-                  {data.lastname}
+                  {data?.lastname}
                 </h6>
               </div>
               <div className="flex flex-col items-center justify-center mb-[35px] gap-2 font-bold text-base leading-[19px] capitalize">

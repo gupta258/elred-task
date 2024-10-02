@@ -59,9 +59,9 @@ export default function MainCard() {
       <div className="absolute top-4 right-5 mb-6">
         <RWebShare
           data={{
-            text: metaData.description,
+            text: metaData?.description,
             url: "https://elred-task.vercel.app/card/",
-            title: metaData.cardTitle,
+            title: metaData?.cardTitle,
           }}
           onClick={() => console.log("shared successfully!")}
         >
