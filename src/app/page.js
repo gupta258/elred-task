@@ -16,7 +16,7 @@ export async function generateMetadata() {
       openGraph: {
         title: data.profileTitle,
         description: data.description,
-        url: "https://elred-task-jwopcnwoy-gupta258s-projects.vercel.app/",
+        url: "https://elred-task.vercel.app/",
         images: [
           {
             url: data.cardImageURL,

@@ -176,7 +176,7 @@ export default function MainPage() {
         <RWebShare
           data={{
             text: metaData.description,
-            url: "https://elred-task-jwopcnwoy-gupta258s-projects.vercel.app/",
+            url: "https://elred-task.vercel.app/",
             title: metaData.profileTitle,
           }}
         >
@@ -335,7 +335,7 @@ export default function MainPage() {
               <RWebShare
                 data={{
                   text: metaData.description,
-                  url: "https://elred-task-jwopcnwoy-gupta258s-projects.vercel.app/",
+                  url: "https://elred-task.vercel.app/",
                   title: metaData.cardTitle,
                 }}
                 onClick={() => console.log("shared successfully!")}
